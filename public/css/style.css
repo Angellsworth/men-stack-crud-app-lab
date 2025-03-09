@@ -1,16 +1,16 @@
-/* Global Styles */
+/* ===================== GLOBAL STYLES ===================== */
 body {
     font-family: Arial, sans-serif;
     background-color: whitesmoke;
-    color: #2A4D8F;
-    /* Darker Vibrant Blue */
+    color: #2F415D;
     margin: 0;
     padding: 0;
 }
 
-/* Navigation */
+/* ===================== NAVIGATION ===================== */
 nav {
     background-image: url('/imgs/books.jpeg');
+    /* Make sure the image is in /public/imgs */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,25 +29,23 @@ nav ul {
     gap: 40px;
 }
 
-/* Navigation Links Styled as Classy Large Links */
+/* Navigation Links */
 nav a {
     font-size: 26px;
     font-weight: bold;
     color: #FDB889;
-    /* Peach */
-    text-decoration: none;
+    text-decoration: none !important;
     position: relative;
     transition: color 0.3s ease-in-out;
 }
 
-/* Underline Sweep Effect on Hover (Classy & Smooth) */
+/* Underline Sweep Effect on Hover */
 nav a::after {
     content: "";
     display: block;
     width: 0;
     height: 3px;
     background-color: #F78F91;
-    /* Soft Pink */
     transition: width 0.3s ease-in-out;
     position: absolute;
     bottom: -5px;
@@ -60,139 +58,165 @@ nav a:hover::after {
 
 nav a:hover {
     color: #F78F91;
-    /* Soft Pink */
+}
+
+/* Ensure Nav Links Don't Get Double Underlines */
+nav a:hover,
+nav a:focus {
     text-decoration: none;
 }
 
 nav ul li {
     margin: 0 30px;
-    /* Adds left & right spacing */
 }
 
-/* --- Landing Page Intro --- */
+/* ===================== LANDING PAGE ===================== */
 .intro {
     text-align: center;
-    max-width: 900px;
+    padding: 50px 10%;
+    max-width: 800px;
     margin: 50px auto;
-    padding: 30px;
-    background: rgba(255, 248, 240, 0.85);
-    /* Soft warm tone */
+    /* Adds spacing from other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Card Styling */
+    background: #fcf7f1;
     border-radius: 12px;
-    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
-    font-family: "Inter", sans-serif;
-    line-height: 1.6;
+    border: 2px solid #dcd8d2;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+    padding: 50px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Title */
+/* Hover Effect - Slight Lift */
+.intro:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
 .intro h1 {
-    font-size: 2.5rem;
-    color: #2A4D8F;
-    /* Darker Vibrant Blue */
+    font-size: 50px;
     font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    color: #2F415D;
+    margin-bottom: 10px;
+
 }
 
-/* Standout Words */
+/* Highlight Colors */
 .highlight {
     color: #FDB889;
-    /* Peach */
-    font-style: italic;
+}
+
+.pop-peach {
+    color: #FDB889;
     font-weight: bold;
 }
 
 .pop-pink {
     color: #F78F91;
-    /* Soft Pink */
     font-weight: bold;
-    transition: transform 0.2s ease-in-out;
 }
 
-.pop-pink:hover {
-    transform: rotate(-2deg);
-}
-
-.pop-peach {
-    color: #FDB889;
-    /* Peach */
-    font-weight: bold;
-    transition: transform 0.2s ease-in-out;
-}
-
-.pop-peach:hover {
-    transform: rotate(2deg);
-}
-
-/* Paragraph Styling */
+/* Landing Page Paragraphs */
 .intro p {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
-    margin-bottom: 15px;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #2F415D;
+    max-width: 800px;
+    margin: 10px auto;
 }
 
-/* Button for Action */
+/* Call-to-Action Button */
 .action-btn {
-    display: inline-block;
-    background: #F78F91;
-    color: white;
-    text-decoration: none;
+    font-size: 20px;
     font-weight: bold;
-    padding: 12px 24px;
+    text-decoration: none;
+    padding: 14px 28px;
     border-radius: 8px;
-    transition: background 0.3s ease-in-out;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    background-color: #3D80CD;
+    color: white;
+    border: 2px solid #3D80CD;
+    margin-top: 20px;
 }
 
 .action-btn:hover {
-    background: #FDB889;
-    transform: scale(1.05);
+    background-color: #2F415D;
+    border-color: #2F415D;
 }
 
-/* --- Main Content --- */
-.container {
-    width: 80%;
-    margin: 20px auto;
+/* ===================== BOOK LIST ===================== */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+/* Individual Book Card */
+.book {
+    background: #ffffff;
+    border-radius: 12px;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- Buttons --- */
-button,
-.btn {
-    background-color: #FDB889;
-    /* Peachy Orange */
-    border: none;
-    padding: 12px 18px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
+/* Floating Effect on Hover */
+.book:hover {
+    transform: translateY(-12px);
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Book Title */
+.book h2 a {
+    font-size: 22px;
+    color: #3D80CD;
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-button:hover,
-.btn:hover {
-    background-color: #F78F91;
-    /* Soft Pink */
+.book h2 a:hover {
+    color: #F78F91;
 }
 
-/* --- Links --- */
-a {
+/* Book Details */
+.book p {
     font-size: 18px;
-    color: #2A4D8F;
-    /* Darker Blue */
-    text-decoration: none;
+    color: #2F415D;
+    margin: 5px 0;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Read Status */
+.read-status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
-/* --- Forms --- */
+/* Read vs. Not Read Colors */
+.read-true {
+    background-color: #b7c56f;
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+}
+
+.read-false {
+    background-color: #f67e80;
+    color: white;
+}
+
+/* ===================== FORMS ===================== */
 form {
     background: #FFFFFF;
     padding: 20px;
@@ -207,14 +231,410 @@ textarea {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #BCC397;
-    /* Taupe */
     border-radius: 5px;
 }
 
-/* --- ⬇️ Footer --- */
+/* ===================== NEW BOOK PAGE ===================== */
+.new-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.new-card {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.new-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.new-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2F415D;
+    margin-bottom: 20px;
+}
+
+.new-highlight {
+    color: #FDB889;
+}
+
+/* Form */
+.new-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.new-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2F415D;
+    text-align: left;
+    display: block;
+}
+
+/* Inputs */
+.new-input {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #bcc397;
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.new-input:focus {
+    border-color: #FDB889;
+    box-shadow: 0 0 8px rgba(253, 184, 137, 0.5);
+    outline: none;
+}
+
+/* Dropdown */
+.new-dropdown {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #bcc397;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.new-dropdown:focus {
+    border-color: #FDB889;
+    box-shadow: 0 0 8px rgba(253, 184, 137, 0.5);
+    outline: none;
+}
+
+/* Checkbox */
+.new-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new-checkbox-input {
+    width: 40px;
+    height: 40px;
+    accent-color: #F78F91;
+}
+
+.new-checkbox-label {
+    font-size: 16px;
+    color: #2F415D;
+}
+
+/* Buttons */
+.new-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.new-btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Save Button */
+.new-save {
+    background-color: #FDB889;
+    color: white;
+    border: 2px solid #FDB889;
+}
+
+.new-save:hover {
+    background-color: #F78F91;
+    border-color: #F78F91;
+    transform: scale(1.05);
+}
+
+/* Cancel Button */
+.new-cancel {
+    background-color: white;
+    color: #2F415D;
+    border: 2px solid #2F415D;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.new-cancel:hover {
+    background-color: #2F415D;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===================== SHOW PAGE STYLING ===================== */
+.show-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+    padding: 50px 10px;
+}
+
+/* Book Details Styled as a Card */
+.show-card {
+    background: white;
+    max-width: 750px;
+    padding: 50px;
+    border-radius: 16px;
+    border: 2px solid #2F415D;
+    box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect - Slight Lift */
+/* .show-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.2);
+} */
+
+/* Book Title */
+.show-card h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2F415D;
+    margin-bottom: 10px;
+}
+
+/* Read Status */
+.show-status {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Read vs. Not Read Colors */
+.read-true {
+    background-color: #b7c56f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.read-false {
+    background-color: #f67e80;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.show-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Delete & Edit Buttons */
+.show-btn {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+/* Edit Button */
+.show-edit {
+    background-color: #70a2d3;
+    color: white;
+    padding: 10px;
+    border: 2px solid #70a2d3;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.show-edit:hover {
+    background-color: #437db2;
+    border-color: #437db2;
+}
+
+/* Delete Button */
+.show-delete {
+    background-color: #F67E80;
+    color: white;
+    border: 2px solid #F67E80;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.show-delete:hover {
+    background-color: #D9534F;
+    border-color: #D9534F;
+}
+
+/* ===================== EDIT PAGE ===================== */
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.edit-card {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.edit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.edit-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2F415D;
+    margin-bottom: 20px;
+}
+
+.edit-highlight {
+    color: #FDB889;
+}
+
+/* Form */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.edit-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2F415D;
+    text-align: left;
+    display: block;
+}
+
+/* Inputs */
+.edit-input {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #bcc397;
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.edit-input:focus {
+    border-color: #FDB889;
+    box-shadow: 0 0 8px rgba(253, 184, 137, 0.5);
+    outline: none;
+}
+
+/* Checkbox */
+.edit-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-checkbox-input {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    accent-color: #F78F91;
+}
+
+.edit-checkbox-label {
+    font-size: 16px;
+    color: #2F415D;
+}
+
+/* Buttons */
+.edit-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Save Button */
+.edit-save {
+    background-color: #FDB889;
+    color: white;
+    border: 2px solid #FDB889;
+}
+
+.edit-save:hover {
+    background-color: #F78F91;
+    border-color: #F78F91;
+    transform: scale(1.05);
+}
+
+/* Cancel Button */
+.edit-cancel {
+    background-color: white;
+    color: #2F415D;
+    border: 2px solid #2F415D;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.edit-cancel:hover {
+    background-color: #2F415D;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===================== FOOTER ===================== */
 footer {
     background-color: #2F415D;
-    /* Dark Blue-Gray */
     color: white;
     text-align: center;
     padding: 25px 0;
@@ -228,7 +648,6 @@ footer {
 footer a {
     font-size: 18px;
     color: #FDB889;
-    /* Warm Peach */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -236,7 +655,6 @@ footer a {
 
 footer a:hover {
     color: #F78F91;
-    /* Soft Pink */
     text-decoration: underline;
 }
 

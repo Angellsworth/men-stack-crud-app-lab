@@ -7,35 +7,45 @@
 <body>
     <%- include("../partials/navbar") %>  <!-- Navbar added -->
 
-    <h1>Edit <%= book.title %></h1>
+    <div class="edit-container">
+        <div class="edit-card">
+            <h1 class="edit-title">Edit: <span class="edit-highlight"><%= book.title %></span></h1>
 
-        <!-- Edit Form: Sends updated data to PUT /books/:bookId -->
-        <form action="/books/<%= book._id %>?_method=PUT" method="POST">
-      
-        <!-- Title Input -->
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<%= book.title %>" required />
+            <!-- Edit Form -->
+            <form action="/books/<%= book._id %>?_method=PUT" method="POST" class="edit-form">
+            
+                <!-- Title Input -->
+                <label for="title" class="edit-label">Title:</label>
+                <input type="text" name="title" id="title" value="<%= book.title %>" required class="edit-input" />
 
-        <!-- Author Input -->
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" value="<%= book.author %>" required />
+                <!-- Author Input -->
+                <label for="author" class="edit-label">Author:</label>
+                <input type="text" name="author" id="author" value="<%= book.author %>" required class="edit-input" />
 
-        <!-- Genre Input -->
-        <label for="genre">Genre:</label>
-        <input type="text" name="genre" id="genre" value="<%= book.genre %>" />
+                <!-- Genre Input -->
+                <label for="genre" class="edit-label">Genre:</label>
+                <input type="text" name="genre" id="genre" value="<%= book.genre %>" class="edit-input" />
 
-        <!-- Checkbox for "Read Status" -->
-        <label for="isRead">Have you read this book?</label>
-        <input type="checkbox" name="isRead" id="isRead"
-            <% if (book.isRead) { %> checked <% } %> />
+                <!-- Checkbox for "Read Status" -->
+                <div class="edit-checkbox">
+                    <input type="checkbox" name="isRead" id="isRead"
+                        <% if (book.isRead) { %> checked <% } %> class="edit-checkbox-input" />
+                    <label for="isRead" class="edit-checkbox-label">Have you read this book?</label>
+                </div>
 
-        <!-- Submitted By Input -->
-        <label for="submittedBy">Submitted By:</label>
-        <input type="text" name="submittedBy" id="submittedBy" value="<%= book.submittedBy %>" required />
-    
-        <!-- Submit Button -->
-        <button type="submit">Update Book</button>
-    </form>
+                <!-- Submitted By Input -->
+                <label for="submittedBy" class="edit-label">Submitted By:</label>
+                <input type="text" name="submittedBy" id="submittedBy" value="<%= book.submittedBy %>" required class="edit-input" />
+            
+                <!-- Buttons -->
+                <div class="edit-buttons">
+                    <button type="submit" class="edit-btn edit-save">Update Book</button>
+                    <a href="/books" class="edit-btn edit-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include("../partials/footer") %>
 </body>
-<%- include("./partials/footer") %>
 </html>

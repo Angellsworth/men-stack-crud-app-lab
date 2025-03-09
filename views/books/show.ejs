@@ -1,31 +1,37 @@
-<!-- views/books/show.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Include the head partial, dynamically setting the title -->
     <%- include("../partials/head", { title: `Book: ${book.title}` }) %>
   </head>
   <body>
-    <%- include("../partials/navbar") %>  <!-- Navbar added -->
+    <%- include("../partials/navbar") %>
 
-    <h1><%= book.title %></h1>
+    <div class="show-container">
+      <div class="show-card">
+        <h1 class="show-title"><%= book.title %></h1>
 
-    <!-- Conditional rendering based on whether the book has been read -->
-    <% if (book.isRead) { %>
-      <p>This book has been read!</p>
-    <% } else { %>
-      <p>This book is waiting to be read!</p>
-    <% } %>
+        <p class="show-author"><strong>Author:</strong> <%= book.author %></p>
+        <p class="show-genre"><strong>Genre:</strong> <%= book.genre %></p>
 
-    <!-- DELETE BUTTON -->
-    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete <%= book.title %></button>
-    </form>
+        <p class="show-status <%= book.isRead ? 'read-true' : 'read-false' %>">
+          <%= book.isRead ? "This book has been read!" : "This book is waiting to be read!" %>
+        </p>
 
-    <!-- EDIT BUTTON -->
-    <a href="/books/<%= book._id %>/edit">
-      <button>Edit <%= book.title %></button>
-    </a>
+        <!-- Buttons Stack -->
+        <div class="show-buttons">
+          <!-- EDIT FORM -->
+          <form action="/books/<%= book._id %>/edit" method="GET">
+            <button type="submit" class="show-btn show-edit">Edit <%= book.title %></button>
+          </form>
+        
+          <!-- DELETE FORM -->
+          <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+            <button type="submit" class="show-btn show-delete">Delete <%= book.title %></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include("../partials/footer") %>
   </body>
-  <%- include("../partials/footer") %>
 </html>

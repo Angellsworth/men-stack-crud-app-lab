@@ -1,47 +1,60 @@
 <!-- views/books/new.ejs -->
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <%- include("../partials/head", { title: "Add a Book" }) %>
+</head>
 <body>
     <%- include("../partials/navbar") %>  <!-- Navbar added -->
-    <h1>Add a New Book</h1>
 
-    <!-- New Book Form: Sends data to POST /books -->
-    <form action="/books" method="POST">
-      
-        <!-- Title Input -->
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" required />
+    <div class="new-container">
+        <div class="new-card">
+            <h1 class="new-title">Add a <span class="new-highlight">New Book</span></h1>
 
-        <!-- Author Input -->
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" required />
+            <!-- New Book Form -->
+            <form action="/books" method="POST" class="new-form">
+            
+                <!-- Title Input -->
+                <label for="title" class="new-label">Title:</label>
+                <input type="text" name="title" id="title" required class="new-input" />
 
-        <!-- Genre Dropdown -->
-        <label for="genre">Genre:</label>
-        <select name="genre" id="genre">
-            <option value="Fiction">Fiction</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Biography">Biography</option>
-            <option value="Self-Help">Self-Help</option>
-            <option value="History">History</option>
-            <option value="Other">Other</option>
-        </select>
+                <!-- Author Input -->
+                <label for="author" class="new-label">Author:</label>
+                <input type="text" name="author" id="author" required class="new-input" />
 
-        <!-- Checkbox for "Read Status" -->
-        <label for="isRead">Have you read this book?</label>
-        <input type="checkbox" name="isRead" id="isRead"/>
+                <!-- Genre Dropdown -->
+                <label for="genre" class="new-label">Genre:</label>
+                <select name="genre" id="genre" class="new-dropdown">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Self-Help">Self-Help</option>
+                    <option value="History">History</option>
+                    <option value="Other">Other</option>
+                </select>
 
-        <!-- Submitted By Input -->
-        <label for="submittedBy">Submitted By:</label>
-        <input type="text" name="submittedBy" id="submittedBy" required />
-    
-        <!-- Submit Button -->
-        <button type="submit">Add Book</button>
-    </form>
+                <!-- Checkbox for "Read Status" -->
+                <div class="new-checkbox">
+                    <input type="checkbox" name="isRead" id="isRead" class="new-checkbox-input" />
+                    <label for="isRead" class="new-checkbox-label">Have you read this book?</label>
+                </div>
+
+                <!-- Submitted By Input -->
+                <label for="submittedBy" class="new-label">Submitted By:</label>
+                <input type="text" name="submittedBy" id="submittedBy" required class="new-input" />
+            
+                <!-- Buttons -->
+                <div class="new-buttons">
+                    <button type="submit" class="new-btn new-save">Add Book</button>
+                    <a href="/books" class="new-btn new-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include("../partials/footer") %>
 </body>
-<%- include("../partials/footer") %>
 </html>

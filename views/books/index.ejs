@@ -1,32 +1,33 @@
-<!-- // Displays a list of all books (READ in CRUD) -->
-<!-- Index page -->
+<!-- All Books Page -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <%- include("../partials/head", { title: "All Books" }) %>
   </head>
-  
-<body>
-  <%- include("../partials/navbar") %>  <!-- Navbar added -->
 
-  <h1>All Books</h1>
-  <div class="book-list">
-    <% books.forEach(book => { %>
-     <div class="book">
-      <h2>
-        <a href="/books/<%= book._id %>">
-          <%= book.title %>
-        </a>
-      </h2>
-      <p><strong>Author:</strong><%= book.author %></p>
-      <p><strong>Genre:</strong><%= book.genre %></p>
-      <p class="read-status">
-        <strong>Status:</strong><span class=" <%= book.isRead ? 'read-true' : 'read-false' %> "><%= book.isRead ? "Read" : "Not Read" %></span>
-      </p>
-      <p><strong>Submitted By:</strong><%= book.submittedBy %></p>
-     </div>
-    <% }) %>
-  </div>
-</body>
-<%- include("../partials/footer") %>
+  <body>
+    <%- include("../partials/navbar") %>
+
+    <h1 class="page-title">All Books</h1>
+    <div class="book-list">
+      <% books.forEach(book => { %>
+      <div class="book">
+        <h2>
+          <a href="/books/<%= book._id %>"> <%= book.title %> </a>
+        </h2>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Genre:</strong> <%= book.genre %></p>
+        <p class="read-status">
+          <strong>Status:</strong>
+          <span class="<%= book.isRead ? 'read-true' : 'read-false' %>">
+            <%= book.isRead ? "Read" : "Not Read" %>
+          </span>
+        </p>
+        <p><strong>Submitted By:</strong> <%= book.submittedBy %></p>
+      </div>
+      <% }) %>
+    </div>
+
+    <%- include("../partials/footer") %>
+  </body>
 </html>
