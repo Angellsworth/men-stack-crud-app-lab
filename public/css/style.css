@@ -1,10 +1,68 @@
 /* ===================== GLOBAL STYLES ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Buenard:wght@400..700&family=Pontano+Sans:wght@300..700&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Buenard:wght@400..700&family=Life+Savers:wght@400;700;800&family=Pontano+Sans:wght@300..700&family=Titan+One&display=swap');
+
+/* .titan-one-regular {
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+/* .pontano-sans-<uniquifier> {
+    font-family: "Pontano Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+/* .buenard-<uniquifier> {
+    font-family: "Buenard", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+/* .life-savers-regular {
+    font-family: "Life Savers", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .life-savers-bold {
+    font-family: "Life Savers", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .life-savers-extrabold {
+    font-family: "Life Savers", serif;
+    font-weight: 800;
+    font-style: normal;
+  } */
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: whitesmoke;
     color: #2F415D;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-family: "Life Savers", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+p {
+    font-family: "Pontano Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+a {
+    font-family: "Life Savers", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* ===================== NAVIGATION ===================== */
@@ -74,7 +132,7 @@ nav ul li {
 .intro {
     text-align: center;
     padding: 50px 10%;
-    max-width: 800px;
+    max-width: 80%;
     margin: 50px auto;
     /* Adds spacing from other elements */
     display: flex;
@@ -126,7 +184,7 @@ nav ul li {
     font-size: 22px;
     line-height: 1.6;
     color: #2F415D;
-    max-width: 800px;
+    max-width: 70%px;
     margin: 10px auto;
 }
 
@@ -151,6 +209,16 @@ nav ul li {
 }
 
 /* ===================== BOOK LIST ===================== */
+.index-page-title {
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    color: #2F415D;
+    /* Soft Pink for warmth */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .book-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
