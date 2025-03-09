@@ -1,0 +1,62 @@
+<!-- //Landing page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head", { title: "The Coded Bookshelf" }) %>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/books">Browse Books</a>
+        </li>
+        <li>
+          <a href="/books/new">Add a New Book</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="intro">
+      <h1>
+        Welcome to
+        <span class="highlight">
+          <br />
+          The Full Stack Bookshelf</span
+        >
+      </h1>
+
+      <p>
+        Where <span class="pop-pink">readers</span> and
+        <span class="pop-peach">developers</span> unite in a
+        <em>beautifully over-engineered</em> way. Because why just
+        <em>store books</em> when you can deploy them?
+      </p>
+
+      <p>
+        Here, you can <em>add books</em>, <em>delete bad decisions</em>, and
+        <em>update your tastes</em>— all while wondering why
+        <em>debugging your life choices</em> isn’t this easy.
+      </p>
+
+      <p>
+        Love <em>fiction</em>? Great! Love <em>JavaScript</em>? Questionable,
+        but we accept you anyway. Whether you’re into <em>frameworks</em> or
+        <em>paperbacks</em>, you’ve found your home.
+      </p>
+
+      <p>
+        No matter what’s on your reading list, you can
+        <em>push(📚) to stack</em> or <em>pop(❌) it off</em> when you’re done.
+        (No semicolons required;)
+      </p>
+
+      <p>
+        So go ahead—<em>CRUD</em> yourself a library, and let’s get
+        <em>fully stacked</em>.
+      </p>
+
+      <a href="/books" class="action-btn">Start Stacking</a>
+    </section>
+  </body>
+  <%- include("./partials/footer") %>
+</html>

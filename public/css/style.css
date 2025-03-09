@@ -1,0 +1,264 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: #2A4D8F;
+    /* Darker Vibrant Blue */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    background-image: url('/imgs/books.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+/* Remove default list styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+/* Navigation Links Styled as Classy Large Links */
+nav a {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FDB889;
+    /* Peach */
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline Sweep Effect on Hover (Classy & Smooth) */
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #F78F91;
+    /* Soft Pink */
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #F78F91;
+    /* Soft Pink */
+    text-decoration: none;
+}
+
+nav ul li {
+    margin: 0 30px;
+    /* Adds left & right spacing */
+}
+
+/* --- Landing Page Intro --- */
+.intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 248, 240, 0.85);
+    /* Soft warm tone */
+    border-radius: 12px;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* Title */
+.intro h1 {
+    font-size: 2.5rem;
+    color: #2A4D8F;
+    /* Darker Vibrant Blue */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Standout Words */
+.highlight {
+    color: #FDB889;
+    /* Peach */
+    font-style: italic;
+    font-weight: bold;
+}
+
+.pop-pink {
+    color: #F78F91;
+    /* Soft Pink */
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pop-pink:hover {
+    transform: rotate(-2deg);
+}
+
+.pop-peach {
+    color: #FDB889;
+    /* Peach */
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pop-peach:hover {
+    transform: rotate(2deg);
+}
+
+/* Paragraph Styling */
+.intro p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Button for Action */
+.action-btn {
+    display: inline-block;
+    background: #F78F91;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:hover {
+    background: #FDB889;
+    transform: scale(1.05);
+}
+
+/* --- Main Content --- */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Buttons --- */
+button,
+.btn {
+    background-color: #FDB889;
+    /* Peachy Orange */
+    border: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #F78F91;
+    /* Soft Pink */
+}
+
+/* --- Links --- */
+a {
+    font-size: 18px;
+    color: #2A4D8F;
+    /* Darker Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Forms --- */
+form {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #BCC397;
+    /* Taupe */
+    border-radius: 5px;
+}
+
+/* --- ⬇️ Footer --- */
+footer {
+    background-color: #2F415D;
+    /* Dark Blue-Gray */
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+/* Footer Links */
+footer a {
+    font-size: 18px;
+    color: #FDB889;
+    /* Warm Peach */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #F78F91;
+    /* Soft Pink */
+    text-decoration: underline;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 16px;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* Line Separator */
+.footer-line {
+    width: 80%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px auto;
+}

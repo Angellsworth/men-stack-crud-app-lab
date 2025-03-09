@@ -1,0 +1,47 @@
+<!-- views/books/new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head", { title: "Add a Book" }) %>
+<body>
+    <%- include("../partials/navbar") %>  <!-- Navbar added -->
+    <h1>Add a New Book</h1>
+
+    <!-- New Book Form: Sends data to POST /books -->
+    <form action="/books" method="POST">
+      
+        <!-- Title Input -->
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required />
+
+        <!-- Author Input -->
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author" required />
+
+        <!-- Genre Dropdown -->
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre">
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Biography">Biography</option>
+            <option value="Self-Help">Self-Help</option>
+            <option value="History">History</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <!-- Checkbox for "Read Status" -->
+        <label for="isRead">Have you read this book?</label>
+        <input type="checkbox" name="isRead" id="isRead"/>
+
+        <!-- Submitted By Input -->
+        <label for="submittedBy">Submitted By:</label>
+        <input type="text" name="submittedBy" id="submittedBy" required />
+    
+        <!-- Submit Button -->
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+<%- include("../partials/footer") %>
+</html>
