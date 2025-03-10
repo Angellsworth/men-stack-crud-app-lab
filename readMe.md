@@ -2,6 +2,8 @@
 
 Welcome to **The Full Stack Bookshelf**—a simple and fun way to keep track of books! Whether you're a book lover, a developer, or a little bit of both, this app helps you **add, browse, update, and remove** books with ease.
 
+![The Full Stack Bookshelf](public/imgs/homePageImg.png)
+
 ## ✨ Features
 - 📝 **Add** books to the collection.
 - 🔍 **View** a list of all books.
